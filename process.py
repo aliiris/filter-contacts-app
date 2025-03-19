@@ -77,6 +77,13 @@ def build_gql_query(phone_chunk):
           registration_date
           ftd_date
           ftd_amount
+          total_calls
+          answered_call
+          first_call_date
+          last_call_date
+          first_answered_call_date
+          last_answered_call_date
+
         }}
       }}
     }}
@@ -99,6 +106,7 @@ def fetched_data(df):
     duplicated_count = phone_count - unique_count
     registered_count = df['platform_id'].count()
     ftd_count = df['ftd_date'].count()
+    
     return phone_count, unique_count, registered_count, ftd_count
 
 def charts(df):
